@@ -1,0 +1,29 @@
+[
+  {
+    "qlabel": "De quoi est fait le bouclier de Captain America?",
+    "qid": 1,
+    "reponses": [
+      {"rlabel": "Adamantium", "rid": 1},
+      {"rlabel": "Vibranium", "rid": 2},
+      {"rlabel": "Titane", "rid": 3}
+    ]
+  },
+  {
+    "qlabel": "Qui était le meilleur ami de Captain America?",
+    "qid": 2,
+    "reponses": [
+      {"rlabel": "Bucky Barnes", "rid": 1},
+      {"rlabel": "Tony Stark", "rid": 2},
+      {"rlabel": "Sam Wilson", "rid": 3}
+    ]
+  },
+  {
+    "qlabel": "Quelle est la phrase célèbre de Captain America?",
+    "qid": 3,
+    "reponses": [
+      {"rlabel": "Vérité, Justice, et la Voie Américaine", "rid": 1},
+      {"rlabel": "Avengers Rassemblement!", "rid": 2},
+      {"rlabel": "Je peux faire ça toute la journée", "rid": 3}
+    ]
+  }
+] 

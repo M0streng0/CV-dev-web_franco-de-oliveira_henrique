@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="comicbook">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacter Captain America</title>
+  <link href="css/output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Comic Neue', cursive;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      margin-top: auto;
+      width: 100%;
+    }
+    .header-container {
+      width: calc(100% - 2rem);
+      max-width: 100%;
+      margin: 1rem auto;
+    }
+    .back-btn {
+      display: inline-block;
+      line-height: 1;
+      padding: 12px 16px;
+    }
+    .comic-title {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .section-title {
+      font-family: 'Luckiest Guy', cursive;
+    }
+    .btn-text {
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body class="bg-slate-100">
+  <!-- En-tête Style Bande Dessinée -->
+  <div class="header-container">
+    <header class="bg-comic-blue comic-border p-4 rounded-lg">
+      <h1 class="comic-heading text-center text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)] comic-title">Canal Prioritaire des Avengers</h1>
+    </header>
+  </div>
+
+  <!-- Contenu Principal -->
+  <main class="max-w-3xl mx-auto p-4 w-full">
+    <div class="comic-panel bg-comic-yellow mb-8">
+      <h2 class="font-bold text-2xl mb-4 section-title">Mission Accomplie!</h2>
+      <p class="text-lg mb-4">Vous avez réussi à accéder au canal sécurisé des Avengers! Remplissez le formulaire ci-dessous pour m'envoyer un message direct.</p>
+      
+      <form id="contactForm" class="bg-white p-6 rounded-lg comic-border">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="label font-bold section-title">Prénom</label>
+            <input type="text" id="firstname" class="input input-bordered comic-border w-full" placeholder="Votre Prénom">
+          </div>
+          <div>
+            <label class="label font-bold section-title">Nom</label>
+            <input type="text" id="lastname" class="input input-bordered comic-border w-full" placeholder="Votre Nom">
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <label class="label font-bold section-title">Email</label>
+          <input type="email" id="email" class="input input-bordered comic-border w-full" placeholder="Votre Email">
+        </div>
+        
+        <div class="mb-6">
+          <label class="label font-bold section-title">Message</label>
+          <textarea id="message" class="textarea textarea-bordered comic-border w-full h-32" placeholder="Votre Message"></textarea>
+        </div>
+        
+        <div class="text-center">
+          <button type="button" onclick="sendEmail()" class="comic-btn btn-primary btn-text text-xl">ENVOYER AU CAPITAINE</button>
+        </div>
+      </form>
+    </div>
+    
+    <div class="text-center">
+      <a href="index.html" class="comic-btn btn-secondary back-btn btn-text text-xl">RETOUR AU QG DU SHIELD</a>
+    </div>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-black text-white p-4 mt-8 w-full">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="comic-title">© 2025 Captain America. Pour la Liberté et la Justice.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function sendEmail() {
+      const firstname = document.getElementById('firstname').value;
+      const lastname = document.getElementById('lastname').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Validation de base
+      if (!firstname || !lastname || !email || !message) {
+        alert('Veuillez remplir tous les champs!');
+        return;
+      }
+      
+      // Création du lien mailto
+      const subject = `Priorité Avengers: Message de ${firstname} ${lastname}`;
+      const body = `Nom: ${firstname} ${lastname}
+Email: ${email}
+
+Message:
+${message}`;
+      
+      // Remplacez par votre email
+      const mailtoLink = `mailto:steve.rogers@avengers.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Ouvrir le client email
+      window.location.href = mailtoLink;
+    }
+  </script>
+</body>
+</html> 
