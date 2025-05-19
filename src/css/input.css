@@ -2,34 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
 
 @layer base {
   body {
     font-family: 'Comic Neue', cursive;
+    background-color: theme('colors.comic-beige');
+    background-image: theme('backgroundImage.halftone-dots');
+    color: theme('colors.comic-black');
   }
 }
 
 @layer components {
   .comic-border {
-    @apply border-4 border-black shadow-[8px_8px_0_rgba(0,0,0,0.8)];
+    @apply border-4 border-black shadow-[8px_8px_0_rgba(0,0,0,0.8)] relative;
+    position: relative;
   }
   
+  /* Silver Age Comic Panel */
   .comic-panel {
-    @apply bg-comic-beige p-4 rounded-lg comic-border overflow-hidden relative;
+    @apply bg-comic-beige p-4 rounded-lg comic-border overflow-hidden relative mb-8;
+    position: relative;
   }
   
+  /* Add BenDay dots effect to panels */
+  .comic-panel-dots::before {
+    content: '';
+    @apply absolute inset-0 bg-halftone-dots opacity-30 mix-blend-multiply z-0;
+    pointer-events: none;
+  }
+  
+  /* Comic book button styling */
   .comic-btn {
     @apply btn font-bold text-black border-4 border-black 
            transform hover:scale-105 hover:-rotate-1 transition-transform 
            uppercase tracking-wider shadow-[5px_5px_0_rgba(0,0,0,0.8)];
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
   }
   
+  /* Classic comic book heading */
   .comic-heading {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl text-comic-red 
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl
            drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)] mb-4 uppercase;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 2px;
+    transform: rotate(-1deg);
   }
   
+  /* Comic speech bubble with improved tail */
   .speech-bubble {
     @apply relative bg-comic-beige p-4 rounded-lg comic-border;
   }
@@ -40,8 +61,68 @@
     bottom: -14px;
     left: 30px;
   }
+  
+  /* Classic comic caption box */
+  .comic-caption {
+    @apply bg-comic-yellow p-2 border-2 border-black inline-block rotate-[-1deg];
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+  }
+  
+  /* Star burst effect for emphasis */
+  .comic-starburst {
+    @apply relative inline-block;
+  }
+  
+  .comic-starburst::before {
+    content: '';
+    @apply absolute inset-[-10px] bg-comic-yellow rounded-full -z-10;
+    clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+      50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+    );
+  }
+  
+  /* Sound effect text */
+  .comic-sound {
+    font-family: 'Bangers', cursive;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wider 
+           transform -rotate-6 text-comic-red drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)];
+  }
 }
 
+/* Animation for comic transitions */
 .comic-transition {
   transition: all 0.3s ease;
+}
+
+/* Silver Age color overlay effects */
+.color-overlay-red {
+  @apply relative;
+}
+
+.color-overlay-red::after {
+  content: '';
+  @apply absolute inset-0 bg-comic-red opacity-20 mix-blend-multiply;
+  pointer-events: none;
+}
+
+.color-overlay-blue {
+  @apply relative;
+}
+
+.color-overlay-blue::after {
+  content: '';
+  @apply absolute inset-0 bg-comic-blue opacity-20 mix-blend-multiply;
+  pointer-events: none;
+}
+
+.color-overlay-yellow {
+  @apply relative;
+}
+
+.color-overlay-yellow::after {
+  content: '';
+  @apply absolute inset-0 bg-comic-yellow opacity-20 mix-blend-multiply;
+  pointer-events: none;
 } 

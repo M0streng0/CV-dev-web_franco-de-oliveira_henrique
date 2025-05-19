@@ -43,19 +43,54 @@
       font-family: 'Bangers', cursive;
       letter-spacing: 1px;
     }
+    /* Comic book cover corner */
+    .comic-corner {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      background-color: #ED1C24;
+      color: white;
+      padding: 5px 15px;
+      transform: rotate(-10deg);
+      font-family: 'Bangers', cursive;
+      letter-spacing: 1px;
+      border: 3px solid black;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+    /* Comic book price tag */
+    .comic-price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #FFF200;
+      color: black;
+      padding: 3px 8px;
+      border-radius: 50%;
+      font-family: 'Bangers', cursive;
+      border: 2px solid black;
+      transform: rotate(5deg);
+      font-size: 0.8rem;
+      z-index: 10;
+    }
   </style>
 </head>
 <body class="bg-comic-beige">
   <!-- En-tête Style Bande Dessinée -->
   <div class="header-container">
-    <header class="bg-comic-blue comic-border p-4 rounded-lg">
+    <header class="bg-comic-blue comic-border p-4 rounded-lg comic-panel-dots">
+      <div class="comic-corner">ISSUE #2</div>
+      <div class="comic-price">$0.25¢</div>
       <h1 class="comic-heading text-center text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)] comic-title">Canal Prioritaire des Avengers</h1>
+      <div class="text-center mt-2">
+        <span class="comic-caption">COMMUNICATION ULTRA-SECRÈTE</span>
+      </div>
     </header>
   </div>
 
   <!-- Contenu Principal -->
   <main class="max-w-3xl mx-auto p-4 w-full">
-    <div class="comic-panel bg-comic-yellow mb-8">
+    <div class="comic-panel bg-comic-yellow comic-panel-dots color-overlay-yellow mb-8">
       <h2 class="font-bold text-2xl mb-4 section-title">Mission Accomplie!</h2>
       <p class="text-lg mb-4">Vous avez réussi à accéder au canal sécurisé des Avengers! Remplissez le formulaire ci-dessous pour m'envoyer un message direct.</p>
       
@@ -82,7 +117,9 @@
         </div>
         
         <div class="text-center">
-          <button type="button" onclick="sendEmail()" class="comic-btn btn-primary btn-text text-xl">ENVOYER AU CAPITAINE</button>
+          <div class="comic-starburst inline-block">
+            <button type="button" onclick="sendEmail()" class="comic-btn btn-primary btn-text text-xl">ENVOYER AU CAPITAINE</button>
+          </div>
         </div>
       </form>
     </div>
@@ -93,7 +130,7 @@
   </main>
 
   <!-- Pied de page -->
-  <footer class="bg-comic-orange text-white p-4 mt-8 w-full">
+  <footer class="bg-comic-blue comic-panel-dots color-overlay-blue text-white p-4 mt-8 w-full">
     <div class="max-w-7xl mx-auto text-center">
       <p class="comic-title">© 2025 Captain America. Pour la Liberté et la Justice.</p>
     </div>

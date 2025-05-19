@@ -1,253 +1,517 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" data-theme="comicbook">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio de Captain America</title>
-  <link href="css/output.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
-      font-family: 'Comic Neue', cursive;
-    }
-    main {
-      flex: 1;
-    }
-    footer {
-      margin-top: auto;
-      width: 100%;
-    }
-    .header-container {
-      width: calc(100% - 2rem);
-      max-width: 100%;
-      margin: 1rem auto;
-    }
-    .comic-title {
-      font-family: 'Bangers', cursive;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    .section-title {
-      font-family: 'Luckiest Guy', cursive;
-    }
-    .btn-text {
-      font-family: 'Bangers', cursive;
-      letter-spacing: 1px;
-    }
-    .profile-circle {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 4px solid black;
-      box-shadow: 8px 8px 0 rgba(0,0,0,0.8);
-    }
-    .profile-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-  </style>
-</head>
-<body class="bg-comic-beige">
-  <!-- En-tête Style Bande Dessinée -->
-  <div class="header-container">
-    <header class="bg-comic-blue comic-border p-4 rounded-lg">
-      <h1 class="comic-heading text-center text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)] comic-title">Portfolio de Captain America</h1>
-    </header>
-  </div>
-
-  <!-- Contenu Principal -->
-  <main class="max-w-7xl mx-auto p-4 w-full">
-    <!-- Navigation -->
-    <div class="tabs tabs-boxed mb-8 flex justify-center">
-      <button class="tab comic-btn flex-grow mx-1 btn-text" data-tab-target="#home">Accueil</button>
-      <button class="tab comic-btn flex-grow mx-1 btn-text" data-tab-target="#calculator">Calculatrice</button>
-      <button class="tab comic-btn flex-grow mx-1 btn-text" data-tab-target="#contact">Me Contacter</button>
-    </div>
-
-    <!-- Onglet Accueil/CV -->
-    <div id="home" data-tab-content class="hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Panneau Biographie -->
-        <div class="comic-panel bg-comic-yellow">
-          <h2 class="font-bold text-2xl mb-4 text-black section-title">Super Soldat</h2>
-          <div class="flex items-center mb-4">
-            <div class="profile-circle">
-              <img src="static/images/profile.png" alt="Profil" class="profile-image">
-            </div>
-            <div class="ml-4">
-              <p class="font-bold">Expérience: 80+ ans</p>
-              <p>Spécialités: Leadership, Combat au Bouclier, Patriotisme</p>
-            </div>
-          </div>
-          <p class="mb-2">Premier Avenger et Super Soldat d'Amérique. Force, agilité et endurance améliorées grâce au Sérum de Super Soldat. Héros principal dans la lutte contre HYDRA et autres menaces pour la liberté.</p>
-          <div class="mt-4">
-            <h3 class="font-bold text-xl mb-2 section-title">Compétences</h3>
-            <div class="flex flex-wrap">
-              <span class="badge badge-primary comic-border m-1 p-2 btn-text">Combat au Bouclier</span>
-              <span class="badge badge-primary comic-border m-1 p-2 btn-text">Stratégie Tactique</span>
-              <span class="badge badge-primary comic-border m-1 p-2 btn-text">Leadership</span>
-              <span class="badge badge-primary comic-border m-1 p-2 btn-text">Combat Corps à Corps</span>
-              <span class="badge badge-primary comic-border m-1 p-2 btn-text">Force Améliorée</span>
-            </div>
-          </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio de Captain America</title>
+        <link href="css/output.css" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Luckiest+Guy&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                overflow-x: hidden;
+                font-family: "Comic Neue", cursive;
+            }
+            main {
+                flex: 1;
+            }
+            footer {
+                margin-top: auto;
+                width: 100%;
+            }
+            .header-container {
+                width: calc(100% - 2rem);
+                max-width: 100%;
+                margin: 1rem auto;
+            }
+            .comic-title {
+                font-family: "Bangers", cursive;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+            .section-title {
+                font-family: "Luckiest Guy", cursive;
+            }
+            .btn-text {
+                font-family: "Bangers", cursive;
+                letter-spacing: 1px;
+            }
+            .profile-circle {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 4px solid black;
+                box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.8);
+            }
+            .profile-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+            /* Comic book cover corner */
+            .comic-corner {
+                position: absolute;
+                top: -12px;
+                left: -12px;
+                background-color: #ed1c24;
+                color: white;
+                padding: 5px 15px;
+                transform: rotate(-10deg);
+                font-family: "Bangers", cursive;
+                letter-spacing: 1px;
+                border: 3px solid black;
+                box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+                z-index: 10;
+            }
+            /* Comic book price tag */
+            .comic-price {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: #fff200;
+                color: black;
+                padding: 3px 8px;
+                border-radius: 50%;
+                font-family: "Bangers", cursive;
+                border: 2px solid black;
+                transform: rotate(5deg);
+                font-size: 0.8rem;
+                z-index: 10;
+            }
+        </style>
+    </head>
+    <body class="bg-comic-beige">
+        <!-- En-tête Style Bande Dessinée -->
+        <div class="header-container" style="width: 80%">
+            <header
+                class="bg-comic-blue comic-border p-4 rounded-lg comic-panel-dots"
+            >
+                <div class="comic-corner">ISSUE #1</div>
+                <div class="comic-price">$0.25¢</div>
+                <h1
+                    class="comic-heading text-center text-white drop-shadow-[3px_3px_0_rgba(0,0,0,0.7)] comic-title"
+                >
+                    Portfolio de Captain America
+                </h1>
+            </header>
         </div>
 
-        <!-- Formation & Expérience -->
-        <div class="comic-panel bg-comic-blue">
-          <h2 class="font-bold text-2xl mb-4 text-white section-title">Formation & Expérience</h2>
-          <div class="collapse collapse-arrow bg-comic-beige comic-border mb-4">
-            <input type="checkbox" class="peer" checked /> 
-            <div class="collapse-title font-bold text-xl section-title">
-              Formation
+        <!-- Contenu Principal -->
+        <main class="max-w-7xl mx-auto p-4 w-full">
+            <!-- Navigation -->
+            <div class="tabs mb-8 flex justify-center">
+                <button
+                    class="tab comic-btn flex-grow mx-1 btn-text active btn-active"
+                    data-tab-target="#home"
+                >
+                    Accueil
+                </button>
+                <button
+                    class="tab comic-btn flex-grow mx-1 btn-text"
+                    data-tab-target="#calculator"
+                >
+                    Calculatrice
+                </button>
+                <button
+                    class="tab comic-btn flex-grow mx-1 btn-text"
+                    data-tab-target="#contact"
+                >
+                    Me Contacter
+                </button>
             </div>
-            <div class="collapse-content"> 
-              <div class="mb-4">
-                <h3 class="font-bold">Entraînement Militaire</h3>
-                <p>Armée des États-Unis</p>
-                <p>Réserve Scientifique Stratégique (RSS)</p>
-              </div>
-              <div>
-                <h3 class="font-bold">Programme Super Soldat</h3>
-                <p>Projet Renaissance</p>
-                <p>Sérum de Super Soldat du Dr. Abraham Erskine</p>
-              </div>
-            </div>
-          </div>
-          <div class="collapse collapse-arrow bg-comic-beige comic-border">
-            <input type="checkbox" class="peer" /> 
-            <div class="collapse-title font-bold text-xl section-title">
-              Expérience
-            </div>
-            <div class="collapse-content"> 
-              <div class="mb-4">
-                <h3 class="font-bold">Chef des Avengers</h3>
-                <p>2012 - Présent</p>
-                <p>Diriger les plus puissants héros de la Terre contre des menaces mondiales et cosmiques.</p>
-              </div>
-              <div>
-                <h3 class="font-bold">Combat Seconde Guerre Mondiale</h3>
-                <p>1941 - 1945</p>
-                <p>A dirigé les Commandos Hurlants contre les forces d'HYDRA à travers l'Europe.</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Portfolio Diaporama -->
-        <div class="comic-panel bg-comic-beige col-span-1 md:col-span-2">
-          <h2 class="font-bold text-2xl mb-4 section-title">Temps Forts des Missions</h2>
-          <div class="carousel w-full h-64 comic-border">
-            <div id="slide1" class="carousel-item relative w-full bg-comic-red flex items-center justify-center">
-              <div class="text-center">
-                <h3 class="text-3xl font-bold text-white comic-title">Bataille de New York</h3>
-                <p class="text-white">Vaincre l'invasion des Chitauri</p>
-              </div>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide3" class="btn comic-btn btn-text">❮</a> 
-                <a href="#slide2" class="btn comic-btn btn-text">❯</a>
-              </div>
-            </div> 
-            <div id="slide2" class="carousel-item relative w-full bg-comic-blue flex items-center justify-center">
-              <div class="text-center">
-                <h3 class="text-3xl font-bold text-white comic-title">Projet Insight</h3>
-                <p class="text-white">Arrêter les héliporteurs d'HYDRA</p>
-              </div>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide1" class="btn comic-btn btn-text">❮</a> 
-                <a href="#slide3" class="btn comic-btn btn-text">❯</a>
-              </div>
-            </div> 
-            <div id="slide3" class="carousel-item relative w-full bg-comic-yellow flex items-center justify-center">
-              <div class="text-center">
-                <h3 class="text-3xl font-bold text-black comic-title">Guerre de l'Infini</h3>
-                <p class="text-black">Affronter Thanos et le Gant de l'Infini</p>
-              </div>
-              <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                <a href="#slide2" class="btn comic-btn btn-text">❮</a> 
-                <a href="#slide1" class="btn comic-btn btn-text">❯</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <!-- Onglet Accueil/CV -->
+            <div id="home" data-tab-content class="hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Panneau Biographie -->
+                    <div
+                        class="comic-panel bg-comic-yellow comic-panel-dots color-overlay-yellow"
+                    >
+                        <h2
+                            class="font-bold text-2xl mb-4 text-black section-title"
+                        >
+                            Super Soldat
+                        </h2>
+                        <div class="flex items-center mb-4">
+                            <div class="profile-circle">
+                                <img
+                                    src="static/images/profile.png"
+                                    alt="Profil"
+                                    class="profile-image"
+                                />
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold">
+                                    Expérience:
+                                    <span class="comic-starburst">80+ ans</span>
+                                </p>
+                                <p>
+                                    Spécialités: Leadership, Combat au Bouclier,
+                                    Patriotisme
+                                </p>
+                            </div>
+                        </div>
+                        <p class="mb-2">
+                            Premier Avenger et Super Soldat d'Amérique. Force,
+                            agilité et endurance améliorées grâce au Sérum de
+                            Super Soldat. Héros principal dans la lutte contre
+                            HYDRA et autres menaces pour la liberté.
+                        </p>
+                        <div class="mt-4">
+                            <h3 class="font-bold text-xl mb-2 section-title">
+                                Compétences
+                            </h3>
+                            <div class="flex flex-wrap">
+                                <span
+                                    class="badge badge-primary comic-border m-1 p-2 btn-text"
+                                    >Combat au Bouclier</span
+                                >
+                                <span
+                                    class="badge badge-primary comic-border m-1 p-2 btn-text"
+                                    >Stratégie Tactique</span
+                                >
+                                <span
+                                    class="badge badge-primary comic-border m-1 p-2 btn-text"
+                                    >Leadership</span
+                                >
+                                <span
+                                    class="badge badge-primary comic-border m-1 p-2 btn-text"
+                                    >Combat Corps à Corps</span
+                                >
+                                <span
+                                    class="badge badge-primary comic-border m-1 p-2 btn-text"
+                                    >Force Améliorée</span
+                                >
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Onglet Calculatrice -->
-    <div id="calculator" data-tab-content class="hidden">
-      <div class="comic-panel bg-comic-orange">
-        <h2 class="font-bold text-2xl mb-4 text-white section-title">Calculateur de Trajectoire du Bouclier</h2>
-        <div class="bg-comic-beige p-6 rounded-lg comic-border">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            <div>
-              <label class="label font-bold">Premier Nombre</label>
-              <input type="number" id="num1" class="input input-bordered comic-border w-full" placeholder="Entrez le premier nombre">
-            </div>
-            <div>
-              <label class="label font-bold">Second Nombre</label>
-              <input type="number" id="num2" class="input input-bordered comic-border w-full" placeholder="Entrez le second nombre">
-            </div>
-          </div>
-          
-          <div class="flex flex-wrap justify-center gap-2 mb-6">
-            <button onclick="calculate('add')" class="comic-btn btn-primary btn-text text-xl">+</button>
-            <button onclick="calculate('subtract')" class="comic-btn btn-secondary btn-text text-xl">-</button>
-            <button onclick="calculate('multiply')" class="comic-btn btn-accent btn-text text-xl">×</button>
-            <button onclick="calculate('divide')" class="comic-btn btn-info btn-text text-xl">÷</button>
-          </div>
-          
-          <div class="speech-bubble mt-6">
-            <h3 class="font-bold text-xl mb-2 section-title">Résultat:</h3>
-            <p id="result" class="text-2xl font-bold comic-title">0</p>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <!-- Formation & Expérience -->
+                    <div
+                        class="comic-panel bg-comic-blue comic-panel-dots color-overlay-blue"
+                    >
+                        <h2
+                            class="font-bold text-2xl mb-4 text-white section-title"
+                        >
+                            Formation & Expérience
+                        </h2>
+                        <div
+                            class="collapse collapse-arrow bg-comic-beige comic-border mb-4"
+                        >
+                            <input type="checkbox" class="peer" checked />
+                            <div
+                                class="collapse-title font-bold text-xl section-title"
+                            >
+                                Formation
+                            </div>
+                            <div class="collapse-content">
+                                <div class="mb-4">
+                                    <h3 class="font-bold">
+                                        Entraînement Militaire
+                                    </h3>
+                                    <p>Armée des États-Unis</p>
+                                    <p>
+                                        Réserve Scientifique Stratégique (RSS)
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">
+                                        Programme Super Soldat
+                                    </h3>
+                                    <p>Projet Renaissance</p>
+                                    <p>
+                                        Sérum de Super Soldat du Dr. Abraham
+                                        Erskine
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="collapse collapse-arrow bg-comic-beige comic-border"
+                        >
+                            <input type="checkbox" class="peer" />
+                            <div
+                                class="collapse-title font-bold text-xl section-title"
+                            >
+                                Expérience
+                            </div>
+                            <div class="collapse-content">
+                                <div class="mb-4">
+                                    <h3 class="font-bold">Chef des Avengers</h3>
+                                    <p>2012 - Présent</p>
+                                    <p>
+                                        Diriger les plus puissants héros de la
+                                        Terre contre des menaces mondiales et
+                                        cosmiques.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">
+                                        Combat Seconde Guerre Mondiale
+                                    </h3>
+                                    <p>1941 - 1945</p>
+                                    <p>
+                                        A dirigé les Commandos Hurlants contre
+                                        les forces d'HYDRA à travers l'Europe.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Onglet Contact -->
-    <div id="contact" data-tab-content class="hidden">
-      <div class="comic-panel bg-comic-red">
-        <h2 class="font-bold text-2xl mb-4 text-white section-title">Vous voulez rejoindre mon équipe?</h2>
-        <div class="bg-comic-beige p-6 rounded-lg comic-border">
-          <p class="text-lg mb-6">Pour accéder à mon communicateur Avengers, vous devez répondre correctement aux questions suivantes. Cela m'aide à garantir que seuls des alliés dignes de confiance peuvent me joindre!</p>
-          
-          <div id="question-container" class="mt-4">
-            <!-- Les questions seront chargées ici par JavaScript -->
-            <div class="flex justify-center">
-              <span class="loading loading-dots loading-lg"></span>
+                    <!-- Portfolio Diaporama -->
+                    <div
+                        class="comic-panel bg-comic-beige col-span-1 md:col-span-2 comic-panel-dots"
+                    >
+                        <h2 class="font-bold text-2xl mb-4 section-title">
+                            Temps Forts des Missions
+                        </h2>
+                        <div class="carousel w-full h-64 comic-border">
+                            <div
+                                id="slide1"
+                                class="carousel-item relative w-full bg-comic-red comic-panel-dots color-overlay-red flex items-center justify-center"
+                            >
+                                <div class="text-center">
+                                    <h3
+                                        class="text-3xl font-bold text-white comic-title"
+                                    >
+                                        Bataille de New York
+                                    </h3>
+                                    <p class="text-white">
+                                        Vaincre l'invasion des Chitauri
+                                    </p>
+                                </div>
+                                <div
+                                    class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+                                >
+                                    <a
+                                        href="#slide3"
+                                        class="btn comic-btn btn-text"
+                                        >❮</a
+                                    >
+                                    <a
+                                        href="#slide2"
+                                        class="btn comic-btn btn-text"
+                                        >❯</a
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                id="slide2"
+                                class="carousel-item relative w-full bg-comic-blue comic-panel-dots color-overlay-blue flex items-center justify-center"
+                            >
+                                <div class="text-center">
+                                    <h3
+                                        class="text-3xl font-bold text-white comic-title"
+                                    >
+                                        Projet Insight
+                                    </h3>
+                                    <p class="text-white">
+                                        Arrêter les héliporteurs d'HYDRA
+                                    </p>
+                                </div>
+                                <div
+                                    class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+                                >
+                                    <a
+                                        href="#slide1"
+                                        class="btn comic-btn btn-text"
+                                        >❮</a
+                                    >
+                                    <a
+                                        href="#slide3"
+                                        class="btn comic-btn btn-text"
+                                        >❯</a
+                                    >
+                                </div>
+                            </div>
+                            <div
+                                id="slide3"
+                                class="carousel-item relative w-full bg-comic-yellow comic-panel-dots color-overlay-yellow flex items-center justify-center"
+                            >
+                                <div class="text-center">
+                                    <h3
+                                        class="text-3xl font-bold text-black comic-title"
+                                    >
+                                        Guerre de l'Infini
+                                    </h3>
+                                    <p class="text-black">
+                                        Affronter Thanos et le Gant de l'Infini
+                                    </p>
+                                </div>
+                                <div
+                                    class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
+                                >
+                                    <a
+                                        href="#slide2"
+                                        class="btn comic-btn btn-text"
+                                        >❮</a
+                                    >
+                                    <a
+                                        href="#slide1"
+                                        class="btn comic-btn btn-text"
+                                        >❯</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Bouton Force Brute -->
-      <div class="mt-8 text-center">
-        <button onclick="startBruteForce()" class="comic-btn btn-error btn-text text-xl">
-          CONTOURNEMENT HYDRA
-        </button>
-        <div id="bruteforce-status" class="mt-4 comic-panel bg-black text-white p-2 hidden">
-          <p id="hack-status" class="font-mono text-sm"></p>
-          <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
-            <div id="hack-progress" class="bg-comic-red h-2.5 rounded-full" style="width: 0%"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <!-- Pied de page -->
-  <footer class="bg-comic-orange text-white p-4 mt-8 w-full">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="comic-title">© 2025 Captain America. Pour la Liberté et la Justice.</p>
-    </div>
-  </footer>
+            <!-- Onglet Calculatrice -->
+            <div id="calculator" data-tab-content class="hidden">
+                <div
+                    class="comic-panel bg-comic-blue comic-panel-dots color-overlay-blue"
+                >
+                    <h2
+                        class="font-bold text-2xl mb-4 text-white section-title"
+                    >
+                        Calculateur de Trajectoire du Bouclier
+                    </h2>
+                    <div class="bg-comic-beige p-6 rounded-lg comic-border">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="label font-bold"
+                                    >Premier Nombre</label
+                                >
+                                <input
+                                    type="number"
+                                    id="num1"
+                                    class="input input-bordered comic-border w-full"
+                                    placeholder="Entrez le premier nombre"
+                                />
+                            </div>
+                            <div>
+                                <label class="label font-bold"
+                                    >Second Nombre</label
+                                >
+                                <input
+                                    type="number"
+                                    id="num2"
+                                    class="input input-bordered comic-border w-full"
+                                    placeholder="Entrez le second nombre"
+                                />
+                            </div>
+                        </div>
 
-  <script src="js/main.js"></script>
-</body>
-</html> 
+                        <div class="flex flex-wrap justify-center gap-2 mb-6">
+                            <button
+                                onclick="calculate('add')"
+                                class="comic-btn btn-primary btn-text text-xl"
+                            >
+                                +
+                            </button>
+                            <button
+                                onclick="calculate('subtract')"
+                                class="comic-btn btn-secondary btn-text text-xl"
+                            >
+                                -
+                            </button>
+                            <button
+                                onclick="calculate('multiply')"
+                                class="comic-btn btn-accent btn-text text-xl"
+                            >
+                                ×
+                            </button>
+                            <button
+                                onclick="calculate('divide')"
+                                class="comic-btn btn-info btn-text text-xl"
+                            >
+                                ÷
+                            </button>
+                        </div>
+
+                        <div class="speech-bubble mt-6">
+                            <h3 class="font-bold text-xl mb-2 section-title">
+                                Résultat:
+                            </h3>
+                            <p
+                                id="result"
+                                class="text-2xl font-bold comic-title"
+                            >
+                                0
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onglet Contact -->
+            <div id="contact" data-tab-content class="hidden">
+                <div
+                    class="comic-panel bg-comic-blue comic-panel-dots color-overlay-blue"
+                >
+                    <h2
+                        class="font-bold text-2xl mb-4 text-white section-title"
+                    >
+                        Vous voulez rejoindre mon équipe?
+                    </h2>
+                    <div class="bg-comic-beige p-6 rounded-lg comic-border">
+                        <p class="text-lg mb-6">
+                            Pour accéder à mon communicateur Avengers, vous
+                            devez répondre correctement aux questions suivantes.
+                            Cela m'aide à garantir que seuls des alliés dignes
+                            de confiance peuvent me joindre!
+                        </p>
+
+                        <div id="question-container" class="mt-4">
+                            <!-- Les questions seront chargées ici par JavaScript -->
+                            <div class="flex justify-center">
+                                <span
+                                    class="loading loading-dots loading-lg"
+                                ></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bouton Force Brute -->
+                <div class="mt-8 text-center">
+                    <div class="comic-starburst inline-block">
+                        <button
+                            onclick="startBruteForce()"
+                            class="comic-btn btn-error btn-text text-xl"
+                        >
+                            CONTOURNEMENT HYDRA
+                        </button>
+                    </div>
+                    <div
+                        id="bruteforce-status"
+                        class="mt-4 comic-panel bg-black text-white p-2 hidden"
+                    >
+                        <p id="hack-status" class="font-mono text-sm"></p>
+                        <div class="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                            <div
+                                id="hack-progress"
+                                class="bg-comic-red h-2.5 rounded-full"
+                                style="width: 0%"
+                            ></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Pied de page -->
+        <footer
+            class="bg-comic-blue comic-panel-dots color-overlay-blue text-white p-4 mt-8 w-full"
+        >
+            <div class="max-w-7xl mx-auto text-center">
+                <p class="comic-title">
+                    © 2025 Captain America. Pour la Liberté et la Justice.
+                </p>
+            </div>
+        </footer>
+
+        <!-- JavaScript pour les interactions -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
