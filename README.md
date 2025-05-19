@@ -39,19 +39,23 @@ project/
 2. Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé.
 
 3. Installez les dépendances:
+
    ```
    npm install
    ```
 
 4. Compilez le CSS:
+
    ```
    npm run build:css
    ```
 
 5. Lancez le site web:
+
    ```
    npm run serve
    ```
+
    Cela ouvrira automatiquement le site dans votre navigateur par défaut.
 
 6. Pour le développement avec rechargement à chaud (surveillance des changements CSS):

@@ -18,4 +18,3 @@ pkgs.mkShell {
     echo "npm install daisyui"
   '';
 }
-
