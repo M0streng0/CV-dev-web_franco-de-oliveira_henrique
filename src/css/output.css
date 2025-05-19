@@ -565,22 +565,22 @@ html {
 }
 
 :root {
-  --p: 0 100% 66%;
-  --pf: 0 100% 59%;
-  --sf: 217 89% 54%;
-  --af: 54 100% 55%;
-  --nf: 218 18% 5%;
-  --b2: 0 0% 93%;
-  --b3: 0 0% 86%;
-  --bc: 146 0% 19%;
-  --pc: 5 40% 14%;
-  --sc: 228 92% 94%;
-  --ac: 51 40% 14%;
-  --nc: 220 3% 80%;
-  --inc: 202 34% 14%;
-  --suc: 152 31% 13%;
-  --wac: 39 47% 13%;
-  --erc: 3 29% 15%;
+  --p: 355 72% 49%;
+  --pf: 355 72% 42%;
+  --sf: 186 96% 31%;
+  --af: 50 89% 47%;
+  --nf: 11 63% 39%;
+  --b2: 34 61% 80%;
+  --b3: 34 61% 73%;
+  --bc: 33 7% 17%;
+  --pc: 8 100% 91%;
+  --sc: 188 48% 90%;
+  --ac: 47 44% 13%;
+  --nc: 14 73% 90%;
+  --inc: 188 48% 90%;
+  --suc: 47 44% 13%;
+  --wac: 14 73% 90%;
+  --erc: 8 100% 91%;
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
@@ -591,14 +591,14 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 217 89% 61%;
-  --a: 54 100% 62%;
-  --n: 218 18% 12%;
-  --b1: 0 0% 100%;
-  --in: 198 93% 60%;
-  --su: 158 64% 52%;
-  --wa: 43 96% 56%;
-  --er: 0 91% 71%;
+  --s: 186 96% 38%;
+  --a: 50 89% 54%;
+  --n: 11 63% 46%;
+  --b1: 34 61% 87%;
+  --in: 186 96% 38%;
+  --su: 50 89% 54%;
+  --wa: 11 63% 46%;
+  --er: 355 72% 49%;
 }
 
 body {
@@ -1024,19 +1024,6 @@ body {
   padding-right: 0.25rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-}
-
-.hero {
-  display: grid;
-  width: 100%;
-  place-items: center;
-  background-size: cover;
-  background-position: center;
-}
-
-.hero > * {
-  grid-column-start: 1;
-  grid-row-start: 1;
 }
 
 .input {
@@ -2321,7 +2308,7 @@ details.collapse summary::-webkit-details-marker {
   overflow: hidden;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: rgb(242 224 201 / var(--tw-bg-opacity, 1));
   padding: 1rem;
 }
 
@@ -2573,7 +2560,7 @@ details.collapse summary::-webkit-details-marker {
   font-weight: 700;
   text-transform: uppercase;
   --tw-text-opacity: 1;
-  color: rgb(255 82 82 / var(--tw-text-opacity, 1));
+  color: rgb(217 35 50 / var(--tw-text-opacity, 1));
   --tw-drop-shadow: drop-shadow(3px 3px 0 rgba(0,0,0,0.7));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
@@ -2602,7 +2589,7 @@ details.collapse summary::-webkit-details-marker {
   position: relative;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: rgb(242 224 201 / var(--tw-bg-opacity, 1));
   padding: 1rem;
 }
 
@@ -2618,7 +2605,7 @@ details.collapse summary::-webkit-details-marker {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+  background-color: rgb(242 224 201 / var(--tw-bg-opacity, 1));
   bottom: -14px;
   left: 30px;
 }
@@ -2812,24 +2799,29 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-comic-blue {
+.bg-comic-beige {
   --tw-bg-opacity: 1;
-  background-color: rgb(66 133 244 / var(--tw-bg-opacity, 1));
+  background-color: rgb(242 224 201 / var(--tw-bg-opacity, 1));
 }
 
-.bg-comic-green {
+.bg-comic-blue {
   --tw-bg-opacity: 1;
-  background-color: rgb(15 157 88 / var(--tw-bg-opacity, 1));
+  background-color: rgb(4 173 191 / var(--tw-bg-opacity, 1));
+}
+
+.bg-comic-orange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 71 44 / var(--tw-bg-opacity, 1));
 }
 
 .bg-comic-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 82 82 / var(--tw-bg-opacity, 1));
+  background-color: rgb(217 35 50 / var(--tw-bg-opacity, 1));
 }
 
 .bg-comic-yellow {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 235 59 / var(--tw-bg-opacity, 1));
+  background-color: rgb(242 208 34 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gray-700 {
@@ -2845,16 +2837,6 @@ details.collapse summary::-webkit-details-marker {
 .bg-red-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 226 226 / var(--tw-bg-opacity, 1));
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1));
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-yellow-100 {
