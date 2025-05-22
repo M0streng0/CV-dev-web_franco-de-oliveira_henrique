@@ -2,6 +2,8 @@
 
 Un site web portfolio élégant sur le thème des bandes dessinées, construit avec Tailwind CSS et DaisyUI.
 
+![main page](./main-page.png)
+
 ## Fonctionnalités
 
 - Design inspiré des bandes dessinées avec des couleurs vibrantes et des éléments dynamiques
