@@ -28,6 +28,7 @@ project/
 │   │   ├── data/
 │   │   │   └── questions.json (Questions du quiz)
 │   │   └── images/
+│   │   │   └── profile.png (Image de profile)
 │   ├── index.html (Page principale)
 │   └── A1_2_A2_1_A3_2.html (Page de contact)
 ├── tailwind.config.js
